@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package user;
 
+option go_package = "github.com/swarnimcodes/userpb";
+
 service UserService {
   rpc GetUserById(UserIdRequest) returns (UserResponse);
   rpc GetUsersByIds(UserIdsRequest) returns (UsersResponse);
@@ -36,5 +38,8 @@ message UsersResponse {
 message SearchRequest {
   string fname = 1;
   string city = 2;
-  bool married = 3;
+  int64 phone = 3;
+  bool married = 4;
+  bool searchByMarriageStatus = 5;
+  bool searchByPhoneNumber = 6;
 }
