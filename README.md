@@ -87,9 +87,11 @@ CPU: Intel i5-8250U (8) @ 3.400GHz
 
 1. `GetUserById`
    Input Params: Id [int32]
+
    Output: User that matches the given Id
 2. `GetUsersByIds`
    Input Params: Ids []int32
+
    Output: All the users that exist with the given Ids from the list
 3. `SearchUsers`
    Input Params:
