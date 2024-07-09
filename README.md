@@ -82,3 +82,23 @@ CPU: Intel i5-8250U (8) @ 3.400GHz
     nvim -S ./session.vim # if you use neovim
     vim -S ./session.vim  # if you use vim
     ```
+
+## gRPC Endpoints
+
+1. `GetUserById`
+   Input Params: Id [int32]
+   Output: User that matches the given Id
+2. `GetUsersByIds`
+   Input Params: Ids []int32
+   Output: All the users that exist with the given Ids from the list
+3. `SearchUsers`
+   Input Params:
+   - SearchByPhoneNumber [bool]: Compulsory param. Tells the server if we are going to search for phone numbers.
+   - SearchByMarriageStatus [bool]: Compulsory param. Tells the server if we are going to search for marital status.
+   - Phone [int64]: Optional. Necessary when SearchByPhoneNumber is true.
+   - Married [bool]: Optional. Necessary when SearchByMarriageStatus is true.
+   - City [string]: Optional
+   - Fname [string]: Optional
+
+   Output: All the users that match the various combinations formed via the input request.
+   Only those users are shown that actually match all the search criteria.
